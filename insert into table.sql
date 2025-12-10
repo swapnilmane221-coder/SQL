@@ -15,3 +15,6 @@ INSERT INTO employee (name, position, department, hire_date, salary) VALUES
 	('Chloe', 'Junior Accountant', 'Finance', '2025-10-01', 65000);
 
 select * from employee;
+
+alter table employee rename column hire_date to hired_date;
+alter table employee rename column hired_date to hire_date;
