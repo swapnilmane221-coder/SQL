@@ -1,7 +1,17 @@
-insert into  employee (name,position,department,hire_date,salary) values
-		('swapnil','full stack','IT','25/03/2026',85000);
+create table employee2(
+		employee_id int generated always as identity (start with 500) primary key,
+		name varchar(100) not null,
+		position varchar(50),
+		department varchar(50),
+		hire_date date,
+		salary numeric(10,2)		
+);
 
-INSERT INTO employee (name, position, department, hire_date, salary) VALUES
+select * from employee2;
+
+insert into  employee2 (name,position,department,hire_date,salary) values
+	('swapnil','full stack','IT','25/03/2026',85000),
+	('swapnil','full stack','IT','25/03/2026',85000),
 	('Keshav', 'Data Analyst', 'Data Science', '2026-01-25', 100000), -- Your original record
 	('Priya', 'Senior Software Engineer', 'Technology', '2024-03-10', 145000),
 	('Ahmed', 'Marketing Manager', 'Marketing', '2023-08-01', 95000),
@@ -14,10 +24,14 @@ INSERT INTO employee (name, position, department, hire_date, salary) VALUES
 	('Rajesh', 'Research Scientist', 'Data Science', '2022-04-12', 155000),
 	('Chloe', 'Junior Accountant', 'Finance', '2025-10-01', 65000);
 
-select * from employee;
+select * from employee2;
 
-alter table employee rename column hire_date to hired_date;
-alter table employee rename column hired_date to hire_date;
 
-truncate table employee; 
-truncate table employee restart identity;--restart the identity
+delete from employee2 where department='Sales';
+
+alter table employee2 drop column salary;
+
+drop table if exists employee2;
+
+
+

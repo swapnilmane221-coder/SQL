@@ -1,5 +1,5 @@
 create table employee(
-		employee_id serial primary key,
+		employee_id serial  primary key,
 		name varchar(100) not null,
 		position varchar(50),
 		department varchar(50),
@@ -7,7 +7,10 @@ create table employee(
 		salary numeric(10,2)		
 );
 
+alter sequence employee_employee_id_seq restart with 101; 
 select * from employee;
+
+drop table employee;
 
 
 
