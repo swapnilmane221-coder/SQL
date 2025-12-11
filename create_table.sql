@@ -45,7 +45,7 @@ drop table employee;
 
 
 CREATE TABLE users (
-    user_id SERIAL PRIMARY KEY,
+    user_id SERIAL  PRIMARY KEY,
     name VARCHAR(100),
     address_details JSONB
 );
@@ -60,4 +60,5 @@ SELECT
     address_details ->> 'city' AS city
 FROM users
 WHERE address_details ->> 'pincode' = '410218';
+drop table users;
 		
