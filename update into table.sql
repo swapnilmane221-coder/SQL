@@ -42,7 +42,31 @@ end
 where
 user_id<6;
 
-savepoint;
+-- delete from users where city='Bangalore' ;
+
+select * from users;
+
+-- SELECT
+--     ROW_NUMBER() OVER (ORDER BY user_id) AS row_num, -- This generates the continuous number
+--     user_id,username,city
+-- FROM
+--     users
+-- ORDER BY
+--     user_id;
+
+-- alter table users drop column row_num;
+
+-- drop table users;
+
+update users set age=case user_id
+	when 5 then 23 end where age=22;
+
+select * from users order by user_id asc;
+
+update users set age=age+1 where email like '%@gmail.com';
+
+
+
 
 
 
